@@ -1,1 +1,3 @@
-<p>home works!</p>
+<div class="image-container" *ngIf="imageOfTheDay">
+    <img [src]="imageOfTheDay.url" [alt]="imageOfTheDay.title" />
+</div>

@@ -1,1 +1,11 @@
-<p>search works!</p>
+<mat-form-field>
+    <input matInput [(ngModel)]="searchQuery" placeholder="Search images..." />
+  </mat-form-field>
+  <button mat-raised-button color="accent" (click)="search(searchQuery)">Search</button>
+  
+  <!-- Display search results (you can customize the layout as needed) -->
+  <div *ngFor="let item of searchResults?.collection?.items">
+    <img [src]="item.links[0].href" [alt]="item.data[0].title" />
+    <div>{{ item.data[0].title }}</div>
+  </div>
+  
